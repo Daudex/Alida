@@ -1,0 +1,848 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+:root{
+    --color-scheme: light dark;
+    --primary: #0000ff;
+    --secondary: hsl(203, 100%, 71%);
+    --secondary-dark: hsl(203, 77%, 41%);
+    --accent: hsl(25, 100%, 72%);
+    --info: #00ff80;
+    --grey: hsl(0, 0%, 79%);
+    --light: hsl(0, 100%, 100%);
+    --dark: hsl(0, 0%, 18%);
+    --mod-dark: #101921;
+}
+html {
+    scroll-behavior: smooth;
+  }
+body{
+    font-family: "DM Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light);
+    color: var(--dark);
+    letter-spacing: .08em;
+}
+a:visited{
+    color: var(--dark);
+}
+
+/* Helper Classess */
+
+/* =========== Text Headings ===== */
+.al-text-h1,
+.al-text-h2,
+.al-text-h3,
+.al-text-h4,
+.al-text-h5,
+.al-text-h6 { font-weight: bolder;}
+
+.al-text-h1{ font-size: 3em; }
+.al-text-h2{ font-size: 2.5em; }
+/* .al-text-h2{ font-size: 1.5em; } */
+.al-text-h3{ font-size: 1.8em; }
+/* .al-text-h3{ font-size: 1.1em; } */
+.al-text-h4{ font-size: 1.1em; }
+.al-text-h5{ font-size: .5em; }
+.al-text-h6{ font-size: .3em; }
+/* =========== Text Headings ===== */
+
+/* ========== Text Formatting */
+.al-text-light{ color: var(--light); }
+.al-text-dark{ color: var(--dark); }
+.al-text-grey{ color: var(--grey); }
+.al-text-primary{ color: var(--primary); }
+.al-text-secondary{ color: var(--secondary); }
+.al-text-secondary-dark{ color: var(--secondary-dark); }
+.al-text-capslock{ text-transform: uppercase; }
+.al-text-nowrap{ white-space: nowrap; }
+.al-text-title{ font-weight: bolder; font-size: 1.17em;}
+.al-text-subtitle{ font-weight: bold; font-size: 0.8;}
+.al-text-center{ text-align: center; align-content: center; justify-content: center; align-items: center;}
+.al-text-vertical{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* ========== Text Formatting */
+
+/* 
+    George Ikwegbu, g.ikwegbu@gmail.com
+
+*/
+
+
+
+/* ========== Background Color Formatting */
+.al-bg-primary{ background-color: var(--primary); }
+.al-bg-secondary{ background-color: var(--secondary); }
+.al-bg-accent{ background-color: var(--accent); }
+.al-bg-info{ background-color: var(--info); }
+.al-bg-light{ background-color: var(--light); }
+.al-bg-dark{ background-color: var(--dark); }
+.al-bg-mod-dark{ background-color: var(--mod-dark); }
+/* ========== Background Color Formatting */
+
+
+/* ========== Buttons ========= */
+.al-btn{
+    outline: none;
+    border: none;
+    padding: .7em 3em;
+    border-radius: .4em;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 5px var(--dark);
+    transition: 0.1s all ease;
+}
+a.al-btn{
+    color: white;
+    text-decoration: none;
+}
+.al-btn:active{
+    transition: 0.1s all ease;
+    box-shadow: 0px 0px 0px var(--dark);
+}
+.al-btn.al-btn-block{
+    width: 100%;
+}
+.al-btn.al-btn-primary{ background-color: var(--primary); }
+.al-btn.al-btn-secondary{ background-color: var(--secondary); }
+.al-btn.al-btn-round{ border-radius: 5em;}
+.al-btn.al-btn-rounded{ border-radius: 100%;}
+.al-btn.al-btn-outline.al-btn-primary{ border: 1px solid var(--primary); background-color: transparent; }
+.al-btn.al-btn-outline.al-btn-secondary{ border: 1px solid var(--secondary); background-color: transparent; }
+
+/* ========== Buttons ========= */
+
+/* ======== Chip ============ */
+.al-chips{
+    padding: 12px 0;
+}
+.al-chips .al-chip {
+    background-color: var(--grey);
+    color: white;
+    display: inline-block;
+    padding: 0 12px;
+    border-radius: 32px;
+    font-size: 13px;
+    margin: 0 2px 5px 0;
+    height: 32px;
+    line-height: 32px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+                0 1px 5px 0 rgba(0, 0, 0, 0.12),
+                0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+.al-chip:hover{
+    transition: 0.3s all ease-in-out;
+    background-color: var(--secondary);
+}
+.al-chip.flat{}
+/* ======== Chip ============ */
+
+
+/* ========= Navigation Bar Layout */
+nav.al-nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1em;
+    transition: 0.2s ease-in-out;
+    position: fixed;
+    color: white;
+    width: 100%;
+    background-color: transparent;
+}
+nav.al-nav-bar .al-brand{
+    font-size: 30px;
+    text-align: center;
+}
+nav.al-nav-bar.al-fixed{
+    top: 0;
+    z-index: 1;
+    width: 100vw;
+    color: black;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.116);
+    position: fixed;
+    background-color: white;
+}
+nav.al-nav-bar.al-fixed .al-brand{
+    color: var(--secondary);
+}
+nav.al-nav-bar ul{
+    margin: 20px 0;
+    list-style: none;
+}
+nav.al-nav-bar ul li{
+    display: inline;
+    margin: 0 20px;
+}
+nav.al-nav-bar.al-fixed ul li a{
+    color: black;
+}
+nav.al-nav-bar ul li a{
+    color: white;
+    padding: 1.5em;
+    text-decoration: none;
+    white-space: nowrap;
+    font-weight: bolder;
+    transition: 0.3s all ease-in-out;
+}
+nav.al-nav-bar ul li a:hover{
+    transition: 0.3s all ease-in-out;
+    color: rgba(162, 151, 151, 0.782);
+}
+nav.al-nav-bar .al-nav-btn,
+nav.al-nav-bar .al-nav-apply-btn{
+    padding-top: 20px;
+}
+nav.al-nav-bar.al-fixed .al-nav-apply-btn a{
+    color: var(--dark);
+}
+nav.al-nav-bar .al-nav-btn{ display: none; cursor: pointer; }
+nav.al-nav-bar .al-nav-btn .al-nav-menu{
+    border: none; 
+    width: 60px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0px 0px 5px var(--dark);
+    transition: 0.1s all ease;
+}
+nav.al-nav-bar .al-nav-btn .al-nav-menu:active{
+    transition: 0.1s all ease;
+    box-shadow: 0px 0px 0px var(--dark);
+}
+nav.al-nav-bar .al-nav-btn .al-nav-menu div{
+    cursor: pointer;
+    background-color: var(--light);
+    margin: 5px 2px;
+    height: 5px;
+    width: 100%;
+}
+nav.al-nav-bar .al-nav-btn .al-nav-menu div:nth-child(1){ width: 90%}
+nav.al-nav-bar .al-nav-btn .al-nav-menu div:nth-child(2){ width: 70%}
+nav.al-nav-bar .al-nav-btn .al-nav-menu div:nth-child(3){ width: 40%}
+
+/* Side Nav */
+.al-side-nav-openClose{
+    display: none;
+    width: 20px;
+    transition: 0.2s;
+}
+
+.al-side-nav{
+    background-color: rgba(238, 238, 238, 0.611);
+    box-sizing: border-box;
+    position: fixed;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0px; /* Will change this in the js */
+    z-index: 1;
+    transition: 0.5s;
+}
+.al-side-nav .al-side-nav-content{
+    background-color: white;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 8px 2px rgba(145, 143, 143, 0.802);
+    width: 75%;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+    top: 0;
+    left: -75%;
+    transition: 0.3s;
+}
+.al-side-nav .al-side-nav-content ul{
+    list-style: none;
+    padding-top: 20px;
+    padding-left: 0px;
+    box-sizing: border-box;
+}
+.al-side-nav .al-side-nav-content ul li{
+    display: block;
+    margin-bottom: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.al-side-nav .al-side-nav-content ul li a{
+    text-decoration: none;
+    background-color: white;
+    display: block;
+    padding: 1em;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.al-side-nav .al-side-nav-content ul li a:hover{
+    color: var(--primary);
+}
+/* Side Nav */
+/* ========= Navigation Bar Layout */
+
+
+
+/* ========= Row ========= */
+.al-row {
+    padding: 15px;
+}
+.al-row::after{ content: ''; display: table; clear: both;}
+
+.al-row .al-col-sm-12{
+    width: 96%;
+    margin: 10px;
+    float: left;
+    box-sizing: border-box;
+}
+.al-row .al-col-sm-4{
+    width: 31%;
+    margin: 10px;
+    float: left;
+    height: 300px;
+    box-sizing: border-box;
+}
+.al-row .al-col-sm-6{
+    height: auto;
+}
+.al-row._mod .al-col-sm-6{
+    height: 600px;
+}
+.al-row._hero .al-col-sm-6{
+    height: 600px;
+}
+.al-row._contact .al-col-sm-6{
+    height: 300px;
+}
+.al-row .al-col-sm-6{
+    width: 47%;
+    margin: 10px;
+    float: left;
+    box-sizing: border-box;
+}
+.al-row._mod .al-col-sm-6 > img{
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+}
+.al-row._mod .al-col-sm-6 > img:hover{
+    transition: 0.4s ease-in-out;
+    transform: scale(1.05);
+    /* box-shadow: 10px 10px 35px 2px gray; */
+    filter: drop-shadow(8px 8px 10px gray);
+    /* cursor: url("../images/memoji/memoji-male.png"), auto; */
+}
+.al-row._mod .al-col-sm-6 > img.accept:hover{
+    /* cursor: url("../images/memoji/memoji-female.png"), auto; */
+}
+.al-row._mod .al-col-sm-6 > img.code:hover{
+    /* cursor: url("../images/memoji/memoji-dev.png"), auto; */
+}
+.al-row._mod .al-col-sm-6 > img.build:hover{
+    /* cursor: url("../images/memoji/memoji-muslim.png"), auto; */
+}
+.al-row._mod .al-col-sm-6 > img.pay:hover{
+    /* cursor: url("../images/memoji/memoji-shocked.png"), auto; */
+}
+.al-row .al-col-sm-6 .al-vertical{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.al-row .al-col-sm-6 .al-vertical  .al-before{
+    margin-right: 10px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    padding: 0.8em;
+    width: 20px;
+    height: 10px;
+    text-align: center;
+}
+.al-row .al-col-sm-6 .al-vertical  .al-before .al-num{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+.al-row.al-justify-between,
+.al-row.al-justify-evenly,
+.al-row.al-justify-center{
+    display: flex;
+    flex-direction: row;
+}
+.al-row.al-justify-evenly{
+    justify-content: space-evenly;
+}
+.al-row.al-justify-between{
+    justify-content: space-between;
+}
+.al-row.al-justify-center{
+    justify-content: center;
+}
+/* ========= Row ========= */
+
+/* ========= Flex ========= */
+.al-flex{
+    display: flex;
+}
+.al-flex .al-flex-wrap{
+    flex-wrap: wrap;
+}
+.al-flex .al-flex-nowrap{
+    flex-wrap: nowrap;
+}
+.al-flex .al-flex-wrap-reverse{
+    flex-wrap: wrap-reverse;
+}
+/* ========= Flex ========= */
+
+
+/* ========= Card ======== */
+.al-why-card,
+.al-card{
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.al-card{
+    box-shadow: 1px 1px 6px 1px gray;
+    padding: 10px;
+}
+.al-why-card{
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.288);
+}
+.al-why-card .al-content{
+    padding: 49px;
+    font-size: 14px;
+}
+.al-why-card .al-content .al-title{
+    font-size: 27px;
+}
+.al-card-img{
+    width: 100%;
+}
+.al-card-img img{
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+    height: 240px;
+}
+.al-card.al-flat{}
+/* ========= Card ======== */
+/* ========= Accordion ======== */
+.al-accordion{
+    /* background: red; */
+}
+.al-accordion .al-accordion-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.al-accordion .al-accordion-header .al-before{
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    padding: 0.8em;
+    width: 10px;
+    height: 10px;
+    text-align: center;
+}
+.al-accordion .al-accordion-header .al-before .al-num{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+.al-accordion .al-accordion-body{
+    display: none;
+
+}
+.al-icon-md{
+    font-size: 40px;
+    font-weight: thin;
+    padding-right: 10px;
+}
+#curriculum input[type=checkbox]:checked ~ .al-accordion-body{
+    display: block;
+    transition: 0.8s all ease-in;
+}
+/* ========= Accordion ======== */
+
+/* ======= Header and Content */
+.al-header{
+    text-align: center;
+    margin: 50px auto;
+    width: 90%;
+}
+.al-content{
+    width: 100%;
+    max-width: 1200px;
+    /* max-width: 80vw; */
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.al-content .al-title{
+    font-size: 27px;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+.al-content .al-subtitle{
+    font-size: 14px;
+    color: var(--grey);
+}
+/* ======= Header and Content */
+
+/* ========== Table ========= */
+.al-table-stripped{
+    margin: 10px;
+    border: 2px dashed var(--primary);
+    height: 30px;
+}
+/* ========== Line Separator ========= */
+/* ========== Table ========= */
+.al-separator-stripped{
+    margin: 10px;
+    border: 1px dashed var(--primary);
+}
+/* ========== Line Separator ========= */
+
+/* ========= Padding */
+/* for auto */
+.al-pa-xs{ padding: 5px; }
+.al-pa-sm{ padding: 10px; }
+.al-pa-md{ padding: 15px; }
+.al-pa-lg{ padding: 20px; }
+/* for left */
+.al-pl-xs{ padding-left: 5px; }
+.al-pl-sm{ padding-left: 10px; }
+.al-pl-md{ padding-left: 15px; }
+.al-pl-lg{ padding-left: 20px; }
+/* for right */
+.al-pr-xs{ padding-right: 5px; }
+.al-pr-sm{ padding-right: 10px; }
+.al-pr-md{ padding-right: 15px; }
+.al-pr-lg{ padding-right: 20px; }
+/* for top */
+.al-pt-xs{ padding-top: 5px; }
+.al-pt-sm{ padding-top: 10px; }
+.al-pt-md{ padding-top: 15px; }
+.al-pt-lg{ padding-top: 20px; }
+/* for bottom */
+.al-pb-xs{ padding-bottom: 5px; }
+.al-pb-sm{ padding-bottom: 10px; }
+.al-pb-md{ padding-bottom: 15px; }
+.al-pb-lg{ padding-bottom: 20px; }
+/* ========= Padding */
+
+/* ========= Margin */
+/* for auto */
+.al-ma-xs{ margin: 5px; }
+.al-ma-sm{ margin: 10px; }
+.al-ma-md{ margin: 15px; }
+.al-ma-lg{ margin: 20px; }
+/* for left */
+.al-ml-xs{ margin-left: 5px; }
+.al-ml-sm{ margin-left: 10px; }
+.al-ml-md{ margin-left: 15px; }
+.al-ml-lg{ margin-left: 20px; }
+/* for right */
+.al-mr-xs{ margin-right: 5px; }
+.al-mr-sm{ margin-right: 10px; }
+.al-mr-md{ margin-right: 15px; }
+.al-mr-lg{ margin-right: 20px; }
+/* for top */
+.al-mt-xs{ margin-top: 5px; }
+.al-mt-sm{ margin-top: 10px; }
+.al-mt-md{ margin-top: 15px; }
+.al-mt-lg{ margin-top: 20px; }
+/* for bottom */
+.al-mb-xs{ margin-bottom: 5px;}
+.al-mb-sm{ margin-bottom: 10px; }
+.al-mb-md{ margin-bottom: 15px; }
+.al-mb-lg{ margin-bottom: 20px; }
+/* ========= Margin */
+
+/* ============ Form Designs */
+.al-form{
+    box-sizing: border-box;
+}
+.al-form .al-form-group{
+    margin: 10px 0px ;
+}
+.al-form .al-form-group .al-form-label{
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.al-form .al-form-group .al-form-input{
+}
+.al-form .al-form-group .al-form-input input,
+.al-form .al-form-group .al-form-input textarea{
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: none;
+    /* resize: vertical; */
+}
+/* ============ Form Designs */
+
+
+/* ================================= */
+/* ================================= */
+/* ================================= */
+/* ========= Page Section/Div Styling ========== */
+/* ================================= */
+/* ================================= */
+.al-bg-heroImg,
+.al-bg-linkImg{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 80vh;
+}
+.al-bg-heroImg{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.281);
+    background-blend-mode:  darken;
+    background-image: url('../images/hero.png');
+}
+.al-bg-linkImg{
+    background-image: url('../images/link.jpg');
+}
+.al-hero{
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.al-hero .al-hero-text{
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+.al-hero .al-hero-image img{
+    /* cursor: url("../images/memoji/memoji-male.png"), auto; */
+}
+.al-why-alida{
+    background-color: rgba(237, 21, 21, 0.288);
+    /* background-color: rgba(241, 236, 236, 0.288); */
+    /* padding: 20px 10em; */
+    /* grid-template-columns: repeat(2, 460px); */
+    display: grid;
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-rows: auto;
+    gap: 30px;
+    justify-content: center;
+}
+.al-why-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.al-why-alida .al-why-header{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 30px;
+    /* font-family: ; */
+}
+.al-why-alida .al-why-content{
+    margin-top: 30px;
+    font-size: 18px;
+}
+.al-mode-of-operation{
+    background-color: var(--mod-dark);
+    padding: 3em 1px;
+}
+.al-curriculum{
+    padding: 3em 1px 3em 1px;
+}
+.al-timeline{
+    padding: 2em 1px;
+    background-color: rgba(226, 226, 226, 0.59);
+}
+.al-timeline .al-content .al-card .al-row.al-justify-between .line-break{
+    width: 220px;
+}
+.al-apply-now{
+    margin-top: 90px;
+    background-color: var(--dark);
+    padding: 100px;
+    position: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+}
+.al-apply-now a{
+   color: var(--primary);
+   background-color: white;
+   width: 200px;
+   margin: 0 auto;
+   text-align: center;
+   padding: 1em;
+   font-size: 2em;
+   border-radius: 10px;
+   text-decoration: none;
+}
+.al-payment-plans{
+    padding: 3em 1px;
+}
+.al-alida-partners{
+    background-color: var(--mod-dark);
+    padding: 10em 1px 10em 1px;
+}
+.al-alida-partners .al-partners-logo{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 30px;
+}
+.al-alida-partners .al-partners-logo img{
+    width: 200px;
+    height: 150px;
+    margin: 10px 20px;
+}
+.al-contact{
+    padding: 3em 1px;
+}
+/* ================================= */
+/* ================================= */
+/* ================================= */
+/* ========= Page Section/Div Styling ========== */
+/* ================================= */
+/* ================================= */
+
+
+
+
+
+
+
+
+
+
+
+/* ================================= */
+/* ================================= */
+/* ================================= */
+/* ========= Media Query Screen ===== */
+/* ================================= */
+/* ================================= */
+/* ================================= */
+
+@media screen and (max-width: 1118px) {
+   /* ========= Navigation Bar Layout */
+    nav.al-nav-bar {
+        justify-content: space-between;
+    }
+    nav.al-nav-bar  ul{
+        display: none;
+    }
+    nav.al-nav-bar  .al-nav-apply-btn{
+        padding-top: 0px;
+        display: none;
+    }
+    nav.al-nav-bar  .al-nav-btn{
+        padding-top: 5px;
+        display: block;
+    }
+    /* ========= Navigation Bar Layout */
+    .al-text-h2{
+        font-size: 2em;
+    }
+
+}
+@media screen and (max-width: 950px) and (max-height: 414px) {
+    .al-bg-heroImg{
+        height: 100vh;
+    }
+    .al-hero .al-hero-text{
+        top: 38%;
+
+    }
+}
+@media screen and (max-height: 790px) {
+    .al-why-container{
+        padding: 10px 0em;
+    }
+}
+@media screen and (max-width: 967px) {
+    .al-why-alida{
+        padding: 10px 2em;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .al-why-alida .al-why-header{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 950px) {
+    .al-row._hero .al-col-sm-6{
+        width: 90%;
+    }
+    .al-row._hero .al-col-sm-6 .al-hero-text{
+        font-size: 10px;
+        /* width: 10px; */
+    }
+    .al-row._mod .al-col-sm-6{
+        height: 400px;
+    }
+    .al-row._curriculum .al-col-sm-6,
+    .al-row._contact .al-col-sm-6,
+    .al-row._payment .al-col-sm-6{
+        width: 96%;
+    }
+    .al-alida-partners .al-partners-logo img{
+        width: 150px;
+    }
+    .al-row._contact .al-col-sm-6{
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 716px){
+    .al-bg-heroImg{
+        background-attachment: scroll;
+    }
+    .al-row._mod .al-col-sm-6,
+    .al-row._hero .al-col-sm-6{
+        width: 92%;
+    }
+    .al-row._mod .al-col-sm-6{
+        height: 300px;
+    }
+    .al-row._mod .al-col-sm-6 > img{
+        width: 300px;
+        max-height: 300px;
+        border-radius: 5px;
+        transition: 0.2s ease-in-out;
+        
+    }
+    .al-timeline .al-content .al-card .al-row.al-justify-between{
+        flex-direction: column;
+        text-align: center;
+        justify-content: space-evenly;
+    }
+    .al-timeline .al-content .al-card .al-row.al-justify-between .line-break{
+        width: 100%;
+    }
+}
+
+
+
+
+
+
